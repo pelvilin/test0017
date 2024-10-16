@@ -34,21 +34,21 @@ export class UsersService {
    updateUser(id: number, updateUserDetails: UpdateUserDto) {
    return this.userRepository.update({id }, {...updateUserDetails});
 
-   async createUserProfileDto(
-    id: Number, 
-    createUserprofileDetails: CreateUserProfileParams){}
-   }{
-    const user = await this.userRepository.findOneBy({ id }) ;
-    if( !user) throw new HttpException( 
-      'User not found. Cannot create Profile', 
-      HttpStatus.BAD_REQUEST,
+  //  async createUserProfileDto(
+  //   id: Number, 
+  //   createUserprofileDetails: CreateUserProfileParams){}
+  //  }{
+  //   const user = await this.userRepository.findOneBy({ id }) ;
+  //   if( !user) throw new HttpException( 
+  //     'User not found. Cannot create Profile', 
+  //     HttpStatus.BAD_REQUEST,
 
-    )
-    const newProfile = this.profileRepository.create(createUserProfileDetails);
-    const savedprofile = await this.profileRepository.save(newProfile); 
-    user.profole = savedprofile; 
-    return this.userRepository.save(user);
-   }
+  //   )
+  //   const newProfile = this.profileRepository.create(createUserProfileDetails);
+  //   const savedprofile = await this.profileRepository.save(newProfile); 
+  //   user.profole = savedprofile; 
+  //   return this.userRepository.save(user);
+  //  }
 }
 
 
